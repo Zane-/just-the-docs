@@ -13,9 +13,9 @@
 function initThemeToggleIcon() {
   let themeToggle = document.getElementById('theme-toggle');
   if (jtd.getTheme() == 'light' || jtd.getTheme() == 'default') {
-    themeToggle.className = 'fa-solid fa-toggle-on';
+    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-on';
   } else {
-    themeToggle.className = 'fa-solid fa-toggle-off';
+    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-off';
   }
 }
 
@@ -30,10 +30,10 @@ function toggleThemeToggleIcon() {
   document.cookie='theme='+jtd.getTheme()+'; path=/';
 
   let themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle.className == 'fa-solid fa-toggle-on') {
-    themeToggle.className = 'fa-solid fa-toggle-off';
+  if (themeToggle.className == 'theme-toggle-icon fa-solid fa-toggle-on') {
+    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-off';
   } else {
-    themeToggle.className = 'fa-solid fa-toggle-on';
+    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-on';
   }
 }
 
