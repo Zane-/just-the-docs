@@ -1,9 +1,5 @@
 <ul class="nav-list">
-  <li style="text-align: right; padding: 10px;">
-	<span style="font-size:2em;">
-		<i id="theme-toggle" class="fa-solid fa-toggle-off" onclick="if(jtd.getTheme() == 'light'){jtd.setTheme('dark');}else{jtd.setTheme('light');}document.cookie='theme='+jtd.getTheme()+'; path=/';let themeToggle = document.getElementById('theme-toggle');if(themeToggle.className == 'fa-solid fa-toggle-on'){themeToggle.className = 'fa-solid fa-toggle-off';}else{themeToggle.className = 'fa-solid fa-toggle-on';}"></i>
-	</span>
-  </li>
+  {% include nav_custom.html %}
 
   {%- assign titled_pages = include.pages
         | where_exp:"item", "item.title != nil" -%}
@@ -19,7 +15,7 @@
 
     The case-sensitivity of string sorting is determined by `site.nav_sort`.
   {%- endcomment -%}
-  
+
   {%- assign string_ordered_pages = titled_pages
         | where_exp:"item", "item.nav_order == nil" -%}
   {%- assign nav_ordered_pages = titled_pages
@@ -40,9 +36,9 @@
       {%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
     {%- endif -%}
   {%- endfor -%}
-  
+
   {%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
-  
+
   {%- comment -%}
     The string_ordered_pages have to be sorted by nav_order, and otherwise title
     (where appending the empty string to a numeric title converts it to a string).
@@ -62,7 +58,7 @@
   {%- endfor -%}
 
   {%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
-  
+
   {%- for node in pages_list -%}
     {%- if node.parent == nil -%}
       {%- unless node.nav_exclude -%}
@@ -103,12 +99,3 @@
     {%- endif -%}
   {%- endfor -%}
 </ul>
-
-<script type="text/javascript">
-  let themeToggle = document.getElementById('theme-toggle');
-  if (jtd.getTheme() == 'light') {
-    themeToggle.className = 'fa-solid fa-toggle-on';
-  } else {
-    themeToggle.className = 'fa-solid fa-toggle-off';
-}
-</script>
