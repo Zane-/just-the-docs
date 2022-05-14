@@ -10,17 +10,13 @@
 })();
 
 // Initializes the classes for the theme-toggle icon based on the theme.
-function initThemeToggleIcon() {
-  let themeToggle = document.getElementById('theme-toggle');
-  if (jtd.getTheme() == 'light' || jtd.getTheme() == 'default') {
-    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-on';
-  } else {
-    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-off';
-  }
+function initThemeToggle() {
+  let themeToggle = document.getElementById('theme-checkbox');
+  themeToggle.checked = (['light', 'default'].includes(jtd.getTheme()));
 }
 
 // Toggles the theme-toggle icon and updates the theme cookie.
-function toggleThemeToggleIcon() {
+function toggleThemeIcon() {
   if (jtd.getTheme() == 'light') {
     jtd.setTheme('dark');
   } else {
@@ -28,13 +24,4 @@ function toggleThemeToggleIcon() {
   }
 
   document.cookie='theme='+jtd.getTheme()+'; path=/';
-
-  let themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle.className == 'theme-toggle-icon fa-solid fa-toggle-on') {
-    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-off';
-  } else {
-    themeToggle.className = 'theme-toggle-icon fa-solid fa-toggle-on';
-  }
 }
-
-

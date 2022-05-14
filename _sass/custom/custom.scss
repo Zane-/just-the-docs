@@ -2,3 +2,49 @@
 	margin-right: 15px;
 	font-size: 2em;
 }
+
+#theme-checkbox {
+    display: none;
+}
+
+.hidden-toggler {
+    display: block;
+    width: 50px;
+    height: 26px;
+    border: 2px solid $link-color;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-switch,
+.light-toggle-icon,
+.dark-toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-switch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    background-color: $link-color;
+    border-radius: 50%;
+    left: 1px;
+    transition: transform 
+    0.5s ease-in-out;
+}
+
+.light-toggle-icon {
+    left: 5px;
+}
+
+.dark-toggle-icon {
+    right: 5px;
+}
+
+#theme-checkbox:checked + .toggle-switch {
+    transform: translate(24px, -50%);
+}
