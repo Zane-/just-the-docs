@@ -6,5 +6,8 @@
 	  cookies[key.trim()] = value;
   });
 
-  jtd.setTheme(cookies["theme"]);
+  if (cookies["theme"]) {
+	console.log(cookies["theme"]);
+	jtd.setTheme(cookies["theme"]);
+  }
 })();
