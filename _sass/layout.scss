@@ -2,6 +2,11 @@
 // The basic two column layout
 //
 
+@font-face {
+	font-family: Momcake;
+	src: url(/assets/fonts/Momcake.otf)
+}
+
 .side-bar {
   z-index: 0;
   display: flex;
@@ -117,7 +122,8 @@
   align-items: center;
   padding-top: $sp-3;
   padding-bottom: $sp-3;
-  color: $body-heading-color;
+  font-family: Momcake;
+  color: #25a170;
   @include fs-6;
 
   @include mq(md) {
