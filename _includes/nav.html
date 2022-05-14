@@ -1,4 +1,10 @@
 <ul class="nav-list">
+  <li style="text-align: right; padding: 10px;">
+	<span style="font-size:2em;">
+		<i id="theme-toggle" class="fa-solid fa-toggle-off" onclick="if(jtd.getTheme() == 'light'){jtd.setTheme('dark');}else{jtd.setTheme('light');}document.cookie='theme='+jtd.getTheme();let themeToggle = document.getElementById('theme-toggle');if(themeToggle.className == 'fa-solid fa-toggle-on'){themeToggle.className = 'fa-solid fa-toggle-off';}else{themeToggle.className = 'fa-solid fa-toggle-on';}"></i>
+	</span>
+  </li>
+
   {%- assign titled_pages = include.pages
         | where_exp:"item", "item.title != nil" -%}
 
@@ -97,3 +103,12 @@
     {%- endif -%}
   {%- endfor -%}
 </ul>
+
+<script type="text/javascript">
+  let themeToggle = document.getElementById('theme-toggle');
+  if (jtd.getTheme() == 'light') {
+    themeToggle.className = 'fa-solid fa-toggle-on';
+  } else {
+    themeToggle.className = 'fa-solid fa-toggle-off';
+}
+</script>
