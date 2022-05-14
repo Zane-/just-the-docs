@@ -159,6 +159,10 @@
 .aux-nav {
   height: 100%;
   overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   @include fs-2;
 
   .aux-nav-list {
