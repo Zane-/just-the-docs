@@ -1,17 +1,12 @@
-.theme-toggle-icon {
-	margin-right: 15px;
-	font-size: 2em;
-}
-
 #theme-checkbox {
     display: none;
 }
 
 .hidden-toggler {
     display: block;
-    width: 50px;
+    width: 45px;
     height: 26px;
-    border: 2px solid $link-color;
+    border: 2px solid $grey-dk-000;
     border-radius: 30px;
     position: relative;
     cursor: pointer;
@@ -22,29 +17,30 @@
 .dark-toggle-icon {
     position: absolute;
     top: 50%;
+	font-size: 1em;
     transform: translateY(-50%);
 }
 
 .toggle-switch {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     z-index: 1;
-    background-color: $link-color;
+    background-color: $blue-100;
     border-radius: 50%;
-    left: 1px;
+    left: 4px;
     transition: transform 
     0.5s ease-in-out;
 }
 
 .light-toggle-icon {
-    left: 5px;
+    left: 6px;
 }
 
 .dark-toggle-icon {
-    right: 5px;
+    right: 6px;
 }
 
 #theme-checkbox:checked + .toggle-switch {
-    transform: translate(24px, -50%);
+    transform: translate(18px, -50%);
 }
