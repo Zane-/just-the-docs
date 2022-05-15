@@ -29,8 +29,9 @@
     background-color: $blue-100;
     border-radius: 50%;
     left: 4px;
-    transition: transform 
-    0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+	-moz-transition: transform 0.5 ease-in-out;
+	-webkit-transition: transform 0.5 ease-in-out;
 }
 
 .light-toggle-icon {
@@ -43,4 +44,6 @@
 
 #theme-checkbox:checked + .toggle-switch {
     transform: translate(18px, -50%);
+    -moz-transform: translate(18px, -50%);
+    -webkit-transform: translate(18px, -50%);
 }
